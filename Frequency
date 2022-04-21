@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int n,i,j,arr[],count=0,freq[];
+	    Scanner input=new Scanner(System.in);
+	    n=input.nextInt();
+	    arr=new int[n];
+	    freq=new int[n];
+	    for(i=0;i<n;i++){
+	        arr[i]=input.nextInt();
+	        freq[i]=-1;
+	    }
+	    for(i=0;i<n;i++){
+	        count=1;
+	        for(j=i+1;j<n;j++){
+	            if(arr[i]==arr[j]){
+	                count++;
+	                freq[j]=0;
+	            }
+	        }
+	            if(freq[i]!=0){
+	                freq[i]=count;
+	        }
+	    }
+	    for(i=0;i<n;i++){
+	        if(freq[i]!=0){
+	             System.out.println("Element "+arr[i]+" = "+"frequency "+ freq[i]);
+	        }
+	    }
+     }
+  }
